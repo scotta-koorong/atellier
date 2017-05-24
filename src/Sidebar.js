@@ -17,7 +17,9 @@ class Sidebar extends React.Component {
     onSelect: PropTypes.func,
     stagedComponent: PropTypes.shape({
       component: PropTypes.func,
-      componentName: PropTypes.string
+      componentName: PropTypes.string,
+      defaultAtellierProps : PropTypes.object,
+      extraPropTypes : PropTypes.object
     }),
   };
 

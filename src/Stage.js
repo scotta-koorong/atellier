@@ -12,7 +12,9 @@ class Stage extends React.Component {
   static propTypes = {
     component: PropTypes.shape({
       component: PropTypes.func,
-      componentName: PropTypes.string
+      componentName: PropTypes.string,
+      defaultAtellierProps : PropTypes.object,
+      extraPropTypes : PropTypes.object
     }),
     properties: PropTypes.object
   };

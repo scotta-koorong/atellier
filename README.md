@@ -58,6 +58,13 @@ const componentList = myComponents.map( (comp)=> {
     return {
       componentName : comp.displayName,
       component : comp
+      extraPropTypes : {
+          query: React.PropTypes.string.isRequired
+      },
+      defaultAtellierProps: {
+          query: "test",
+          text: "testing string",
+      }
     }
 })
 

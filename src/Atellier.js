@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import Immutable from 'immutable';
 import Sidebar from './Sidebar';
 import Workspace from './Workspace';
+import DefaultPropsMerger from './DefaultPropsMerger';
 
 import './styles/atellier.less';
 
@@ -14,14 +15,16 @@ class Atellier extends React.Component {
   static propTypes = {
     components: PropTypes.arrayOf(PropTypes.shape({
       component: PropTypes.func,
-      componentName: PropTypes.string
+      componentName: PropTypes.string,
+      defaultAtellierProps : PropTypes.object,
+      extraPropTypes : PropTypes.object
     }))
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      components: Immutable.List(props.components),
+      components: Immutable.List(DefaultPropsMerger(props.components)),
       stagedComponent: null
     };
   }
